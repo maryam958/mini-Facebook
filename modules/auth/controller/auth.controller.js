@@ -38,7 +38,7 @@ export const signUp = async (req, res) => {
         <br>
         <a href="http://localhost:3000/api/v1/auth/refreshToken/${refreshToken}">Click here to get new one</a>`;
     sendEmail(email, message);
-   console.log( sendEmail(email, message));
+  //  console.log( sendEmail(email, message));
     res.status(StatusCodes.CREATED).json({ message: "added successfully", savedUser,status:getReasonPhrase(StatusCodes.CREATED) });
   }
   } catch (error) {
@@ -123,7 +123,7 @@ export const sendCode = async (req, res) => {
     res.json({ message: "User didn't register yet" });
   } else {
     let OTPCode = nanoid();
-    console.log(OTPCode);
+    // console.log(OTPCode);
     await userModel.findByIdAndUpdate(user._id, { OTPCode });
     let message = `your OTPCode is ${OTPCode}`;
     sendEmail(user.email, message);

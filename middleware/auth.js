@@ -6,10 +6,10 @@ export const auth = () => {
     try {
       const { authorization } = req.headers;
       var token = authorization.split(" ")[1];
-      console.log(authorization.split(" "));
+      // console.log(authorization.split(" "));
       if (authorization.startsWith("Bearer")) {
         const decoded = jwt.verify(token, process.env.tokenKey);
-        console.log(decoded);
+        // console.log(decoded);
         if (decoded) {
           const user = await userModel.findById(decoded.id);
           if (user) {

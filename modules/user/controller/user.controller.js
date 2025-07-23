@@ -83,7 +83,7 @@ export const profilePic = async (req, res) => {
     { _id: req.currentUserID },
     { profilePic: uploadedImg.secure_url }
   );
-  console.log(uploadedImg);
+  // console.log(uploadedImg);
   res.json({ message: "Done", profilePic });
 };
 
@@ -119,6 +119,6 @@ export const coverPic = async (req, res) => {
     
   );
 
-  console.log(coverPic);
+  // console.log(coverPic);
   res.json({ message: "Done", coverPic });
 };

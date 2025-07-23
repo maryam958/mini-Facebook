@@ -15,7 +15,7 @@ export const addComment = async (req, res) => {
       $push: { commentsId: savedComment._id },
     });
     res.status(201).json({ message: "Comment Added", savedComment });
-    console.log(addedToPosts);
+    // console.log(addedToPosts);
   }
 };
 

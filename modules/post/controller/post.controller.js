@@ -78,7 +78,7 @@ export const getAllPosts=async(req,res)=>{
     newObj.comment=comment 
     allPosts.push(newObj);
   }
-  console.log(allPosts);
+  // console.log(allPosts);
   res.json({message:"Done",allPosts})
 }
 
